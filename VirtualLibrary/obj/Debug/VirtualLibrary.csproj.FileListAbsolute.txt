@@ -1,0 +1,10 @@
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\bin\Debug\VirtualLibrary.exe.config
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\bin\Debug\VirtualLibrary.exe
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\bin\Debug\VirtualLibrary.pdb
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\obj\Debug\VirtualLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\obj\Debug\VirtualLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\obj\Debug\VirtualLibrary.csproj.CopyComplete
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\obj\Debug\VirtualLibrary.exe
+C:\Users\Ada\source\repos\VirtualLibrary\VirtualLibrary\obj\Debug\VirtualLibrary.pdb

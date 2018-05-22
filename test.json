@@ -1,0 +1,50 @@
+﻿[
+  {
+    "BookId": "e38d2b5b-e6f0-426a-8430-a5b1561a1863",
+    "Title": "Lalka",
+    "Author": "Bolesław Prus",
+    "Isbn": "12312313",
+    "LastBorrowedOn": "2018-05-22T19:04:09.87518+02:00",
+    "BorrowerName": "Adrianna Wronowska"
+  },
+  {
+    "BookId": "cc36b773-1c11-48b3-bf08-f88568341ce4",
+    "Title": "Ogniem i Mieczem",
+    "Author": "Henryk Sienkiewicz",
+    "Isbn": "123123",
+    "LastBorrowedOn": null,
+    "BorrowerName": null
+  },
+  {
+    "BookId": "468d3dbd-527c-41db-af84-3b2696fa7eb9",
+    "Title": "Samolubny gen",
+    "Author": "Richard Dawkins",
+    "Isbn": "123123",
+    "LastBorrowedOn": null,
+    "BorrowerName": null
+  },
+  {
+    "BookId": "df27597a-4df2-449f-8170-9468d0d95f5a",
+    "Title": "Zbrodnia i kara",
+    "Author": "Fiodor Dostojewski",
+    "Isbn": "131231312",
+    "LastBorrowedOn": "2018-04-22T19:03:07.7603927+02:00",
+    "BorrowerName": null
+  },
+  {
+    "BookId": "7ee356e7-a369-4fc8-97bd-b9182374be16",
+    "Title": "Potop",
+    "Author": "Henryk Sienkiewicz",
+    "Isbn": "123123",
+    "LastBorrowedOn": "2018-05-22T19:54:42.092313+02:00",
+    "BorrowerName": "Adrianna Wronowska"
+  },
+  {
+    "BookId": "55ad4c25-e534-45ba-ac87-fd7829c37407",
+    "Title": "Dżuma ",
+    "Author": "Albert Camus",
+    "Isbn": "1231231",
+    "LastBorrowedOn": "2018-05-22T19:01:35.8904308+02:00",
+    "BorrowerName": null
+  }
+]

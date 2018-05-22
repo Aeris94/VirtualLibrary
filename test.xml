@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <BookId>2249f93e-e318-4edd-a40c-9f4965d2bc34</BookId>
+    <Title>Lalka </Title>
+    <Author>Bolesław Prus</Author>
+    <Isbn>12312313</Isbn>
+    <LastBorrowedOn xsi:nil="true" />
+  </Book>
+  <Book>
+    <BookId>4d87d241-02ec-4e76-a1ce-a4e72708c719</BookId>
+    <Title>Ogniem i Mieczem</Title>
+    <Author>Henryk Sienkiewicz</Author>
+    <Isbn>123123</Isbn>
+    <LastBorrowedOn xsi:nil="true" />
+  </Book>
+  <Book>
+    <BookId>45248060-95bc-41a6-8f26-56ff5bfe355d</BookId>
+    <Title>Samolubny gen</Title>
+    <Author>Richard Dawkins</Author>
+    <Isbn>123123</Isbn>
+    <LastBorrowedOn xsi:nil="true" />
+  </Book>
+  <Book>
+    <BookId>cd85b506-9f2e-46cf-aaa0-69429ceba762</BookId>
+    <Title>Zbrodnia i kara</Title>
+    <Author>Fiodor Dostojewski</Author>
+    <Isbn>131231312</Isbn>
+    <LastBorrowedOn xsi:nil="true" />
+  </Book>
+  <Book>
+    <BookId>460d7a51-a9eb-49b7-aed8-1f5daa188819</BookId>
+    <Title>Potop</Title>
+    <Author>Henryk Sienkiewicz</Author>
+    <Isbn>123123</Isbn>
+    <LastBorrowedOn xsi:nil="true" />
+  </Book>
+  <Book>
+    <BookId>5805eec1-475f-4832-9c55-4ca7b8d07e2c</BookId>
+    <Title>Dżuma </Title>
+    <Author>Albert Camus</Author>
+    <Isbn>1231231</Isbn>
+    <LastBorrowedOn>2018-05-22T16:02:44.6566579+02:00</LastBorrowedOn>
+    <BorrowerName>Michał Kowalczyk</BorrowerName>
+  </Book>
+  <Book>
+    <BookId>1fba2577-04bb-49ee-867c-ce954f25bf7b</BookId>
+    <Title>Dzwonnik z Noterdame</Title>
+    <Author>Victor Hugo</Author>
+    <Isbn>123123177</Isbn>
+    <LastBorrowedOn xsi:nil="true" />
+  </Book>
+  <Book>
+    <BookId>843f1c0a-ec5f-4b18-8a3d-bbe27c9af38f</BookId>
+    <Title>Mistrz i Małgorzata</Title>
+    <Author>Michaił Bułhakov</Author>
+    <Isbn>1290789070</Isbn>
+    <LastBorrowedOn>2018-05-22T21:26:57.0786519+02:00</LastBorrowedOn>
+    <BorrowerName>Kinga Moniuszko</BorrowerName>
+  </Book>
+</ArrayOfBook>
