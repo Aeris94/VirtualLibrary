@@ -1,9 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VirtualLibrary.Books;
 using VirtualLibrary.Configurations;
 using VirtualLibrary.Library;
@@ -295,4 +293,3 @@ namespace VirtualLibrary
         }
     }
 }
-
