@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,54 +39,48 @@ namespace VirtualLibrary.Library
             _bookRepository.Save();
         }
 
-        public IEnumerable<Book> Search(
-           string title = null,
-           string author = null,
-           string isbn = null,
-           int? weeks = null,
-           bool? borrowed = null)
+        public IEnumerable<Book> Search(SearchCriteria searchCriteria)
         {
             IEnumerable<Book> result = _bookRepository.Books;
-            if (title != null)
+            if (searchCriteria.Title != null)
             {
                 result = result
-                    .Where(b => b.Title == title)
+                    .Where(b => b.Title == searchCriteria.Title)
                     .OrderBy(b => b.Title);
             }
-            if (author != null)
+            if (searchCriteria.Author != null)
             {
                 result = result
-                    .Where(b => b.Author == author)
+                    .Where(b => b.Author == searchCriteria.Author)
                     .OrderBy(b => b.Author);
             }
-            if (isbn != null)
+            if (searchCriteria.Isbn != null)
             {
                 result = result
-                    .Where(b => b.Isbn == isbn)
+                    .Where(b => b.Isbn == searchCriteria.Isbn)
                     .OrderBy(b => b.Isbn);
             }
-            if (weeks != null)
+            if (searchCriteria.Weeks != null)
             {
-                var fromDate = DateTime.Today.AddDays(-7 * (double)weeks);
+                var fromDate = DateTime.Today.AddDays(-7 * (double)searchCriteria.Weeks);
                 result = result
                     .Where(b => b.BorrowerName == null)
                     .Where(b => b.LastBorrowedOn.HasValue)
                     .Where(b => b.LastBorrowedOn <= fromDate)
                     .OrderBy(b => b.LastBorrowedOn);
             }
-            if (borrowed == true)
+            if (searchCriteria.Borrowed == true)
             {
                 result = result
                     .Where(b => b.BorrowerName != null)
                     .OrderBy(b => b.BorrowerName);
             }
-            if (borrowed == false)
+            if (searchCriteria.Borrowed == false)
             {
-                return result = result
+                result = result
                     .Where(b => b.BorrowerName == null)
                     .OrderBy(b => b.BorrowerName);
             }
-
             return result;
         }
 
