@@ -55,6 +55,7 @@
     <Compile Include="Library\ILibraryService.cs" />
     <Compile Include="Library\ConsoleLibraryPresenter.cs" />
     <Compile Include="Library\LibraryService.cs" />
+    <Compile Include="Library\SearchCriteria.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
