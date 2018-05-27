@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -71,47 +71,44 @@ namespace VirtualLibrary
 
         }
 
+        public static Dictionary<char, Action> menuOptions = new Dictionary<char, Action>
+        {
+            ['1'] = AddBook,
+            ['2'] = RemoveBook,
+            ['3'] = Search,
+            ['4'] = BorrowBook,
+            ['5'] = ReturnBook,
+            ['6'] = ShowUsers,
+            ['7'] = ShowAllBooks,
+            ['q'] = Exit,
+            ['Q'] = Exit
+        };
+
         private static void Menu()
         {
-            string menuOption;
-            do
+            char menuOption = ' ';
+            string strMenuOption;
+
+            while(true)
             {
                 Console.WriteLine("\nPlease choose an option: ");
                 DisplayOptions();
-                menuOption = Console.ReadLine();
+                strMenuOption = Console.ReadLine();
 
-                switch (menuOption.Trim())
+                if(!char.TryParse(strMenuOption, out menuOption))
                 {
-                    case "1":
-                        AddBook();
-                        break;
-                    case "2":
-                        RemoveBook();
-                        break;
-                    case "3":
-                        Search();
-                        break;
-                    case "4":
-                        BorrowBook();
-                        break;
-                    case "5":
-                        ReturnBook();
-                        break;
-                    case "6":
-                        ShowUsers();
-                        break;
-                    case "7":
-                        ShowAllBooks();
-                        break;
-                    case "q":
-                    case "Q":
-                        Exit();
-                        break;
-                    default:
-                        Console.WriteLine("There is no such option.");
-                        break;
+                    Console.WriteLine("There is no such option.");
+                    continue;
                 }
-            } while (menuOption != "Q" && menuOption != "q");
+
+                if(!menuOptions.ContainsKey(menuOption))
+                {
+                    Console.WriteLine("There is no such option.");
+                    continue;
+                }
+
+                menuOptions[menuOption]();
+            }
         }
 
         private static void DisplayOptions()
@@ -165,7 +162,7 @@ namespace VirtualLibrary
 
         private static void RemoveBook()
         {
-            _libraryPresenter.DisplayList(_libraryService.Search());
+            _libraryPresenter.DisplayList(_libraryService.Search(new SearchCriteria()));
 
             Console.WriteLine("Plese enter result number.");
 
@@ -176,7 +173,7 @@ namespace VirtualLibrary
             }
 
             position--;
-            var booksToRemove = _libraryService.Search();
+            var booksToRemove = _libraryService.Search(new SearchCriteria());
             if (position >= booksToRemove.Count() || position < 0)
             {
                 Console.WriteLine("This book doesnt exist.");
@@ -190,7 +187,7 @@ namespace VirtualLibrary
 
         private static void Search()
         {
-            Console.WriteLine("\nPlsese enter one of the following search criterium:" +
+            Console.WriteLine("\nPlsese enter one or more of the following search criterium:" +
                 "\n title," +
                 "\n author, " +
                 "\n ISBN " +
@@ -220,15 +217,19 @@ namespace VirtualLibrary
                 nullableWeeks = weeks;
             }
 
-            var result = _libraryService.Search(title: title, author: author, isbn: isbn,
-                weeks: nullableWeeks);
+            var result = _libraryService.Search(
+                new SearchCriteria(
+                    title: title, 
+                    author: author,
+                    isbn: isbn,
+                    weeks: nullableWeeks));
             _libraryPresenter.DisplayList(result);
         }
 
         private static void BorrowBook()
         {
             Console.WriteLine("Available books: ");
-            _libraryPresenter.DisplayList(_libraryService.Search(borrowed: false));
+            _libraryPresenter.DisplayList(_libraryService.Search(new SearchCriteria(borrowed: false)));
 
             Console.WriteLine("Plese enter a name: ");
             var name = Console.ReadLine().Trim();
@@ -246,7 +247,7 @@ namespace VirtualLibrary
             }
 
             position--;
-            var booksToBorrow = _libraryService.Search(borrowed: false);
+            var booksToBorrow = _libraryService.Search(new SearchCriteria(borrowed: false));
             if (position >= booksToBorrow.Count() || position < 0)
             {
                 Console.WriteLine("This book doesnt exist.");
@@ -261,7 +262,7 @@ namespace VirtualLibrary
         private static void ReturnBook()
         {
             Console.WriteLine("Borrowed books: ");
-            _libraryPresenter.DisplayList(_libraryService.Search(borrowed: true));
+            _libraryPresenter.DisplayList(_libraryService.Search(new SearchCriteria(borrowed: true)));
 
             Console.WriteLine("Plese enter result number: ");
             if (!int.TryParse(Console.ReadLine(), out var position))
@@ -271,7 +272,7 @@ namespace VirtualLibrary
             }
 
             position--;
-            var booksToReturn = _libraryService.Search(borrowed: true);
+            var booksToReturn = _libraryService.Search(new SearchCriteria(borrowed: true));
             if (position >= booksToReturn.Count() || position < 0)
             {
                 Console.WriteLine("This book doesnt exist.");
@@ -285,12 +286,13 @@ namespace VirtualLibrary
 
         private static void ShowUsers()
         {
-            _libraryPresenter.DiplayDictionary(_libraryService.UserSearch());
+            _libraryPresenter.DisplayBorrowedBooks(_libraryService.UserSearch());
         }
 
         private static void ShowAllBooks()
         {
-            _libraryPresenter.DisplayList(_libraryService.Search());
+            _libraryPresenter.DisplayList(_libraryService.Search(new SearchCriteria()));
         }
     }
 }
+
