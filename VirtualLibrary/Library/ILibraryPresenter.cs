@@ -5,7 +5,7 @@ namespace VirtualLibrary.Library
 {
     public interface ILibraryPresenter
     {
-        void DiplayDictionary(IDictionary<string, int> dictionary);
+        void DisplayBorrowedBooks(IDictionary<string, int> dictionary);
         void DisplayList(IEnumerable<Book> list);
     }
 }
