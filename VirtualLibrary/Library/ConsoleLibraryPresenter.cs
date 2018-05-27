@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +11,26 @@ namespace VirtualLibrary.Library
     {
         public void DisplayList(IEnumerable<Book> list)
         {
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < list.Count(); i++)
+            if(!list.Any())
             {
-                result.Append($"\nResult {i + 1} " + RecordToString(list.ElementAt(i)));
+                Console.WriteLine("No results.");
+                return;
             }
-            Console.WriteLine(result.Length == 0 ? "No results." : result.ToString());
+
+            int index = 1;
+            StringBuilder result = new StringBuilder();
+
+            foreach (var item in list)
+            {
+                result.Append($"\nResult {index} ");
+                result.Append(RecordToString(item));
+                index++;
+            }
+
+            Console.WriteLine(result.ToString());
         }
 
-        public void DiplayDictionary(IDictionary<string, int> dictionary)
+        public void DisplayBorrowedBooks(IDictionary<string, int> dictionary)
         {
             StringBuilder result = new StringBuilder();
 
