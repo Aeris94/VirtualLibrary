@@ -84,7 +84,6 @@ namespace VirtualLibrary
 
         private static void Menu()
         {
-            char menuOption = ' ';
             string strMenuOption;
 
             while(true)
@@ -93,7 +92,7 @@ namespace VirtualLibrary
                 DisplayOptions();
                 strMenuOption = Console.ReadLine();
 
-                if(!char.TryParse(strMenuOption, out menuOption))
+                if(!char.TryParse(strMenuOption, out var menuOption))
                 {
                     Console.WriteLine("There is no such option.");
                     continue;
