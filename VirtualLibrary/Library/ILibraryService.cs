@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using VirtualLibrary.Books;
 
 namespace VirtualLibrary.Library
@@ -9,7 +9,7 @@ namespace VirtualLibrary.Library
         void BorrowBook(Book book, string name);
         void RemoveBook(Book book);
         void ReturnBook(Book book);
-        IEnumerable<Book> Search(string title = null, string author = null, string isbn = null, int? weeks = null, bool? borrowed = null);
+        IEnumerable<Book> Search(SearchCriteria searchCriteria);
         IDictionary<string, int> UserSearch();
     }
 }
